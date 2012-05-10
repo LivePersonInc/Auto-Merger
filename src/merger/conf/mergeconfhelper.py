@@ -27,7 +27,8 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 """
-Nice helper methods to load configuration file, to load defaults in conf...
+Nice helper methods to ease the work of configuration management for auto merger.
+(defaults, sections do not exist, arrays, tuples)
 """
 
 
