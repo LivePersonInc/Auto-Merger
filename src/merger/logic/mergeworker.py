@@ -200,7 +200,7 @@ def is_next_branch_relevant(commitrev, current_branch, next_branch):
 def handle_merge_failed(revstart, revend, current_branch_name, next_branch_name, message, author, rev_as_str, commit_merge_result):
     mergeconf.LOGGER.debug('merge failed')
     try:
-        mailutils.mail(mergeconfhelper.get_dl(author, mergeconf.ENUM_MERGE), get_failed_mergecommit_subject(current_branch_name, next_branch_name, author, rev_as_str), get_failed_mergecommit_text(current_branch_name, next_branch_name, message, author, rev_as_str, commit_merge_result), mergeconf.MAIL_ENABLED)
+        mailutils.mail(mergeconf.get_dl(author, mergeconf.ENUM_MERGE), get_failed_mergecommit_subject(current_branch_name, next_branch_name, author, rev_as_str), get_failed_mergecommit_text(current_branch_name, next_branch_name, message, author, rev_as_str, commit_merge_result), mergeconf.MAIL_ENABLED)
     except:
         LOGGER.error("Please check mail configuration, failed sending email...")
     audit_write(AUDIT_OP_MERGE, author, current_branch_name, next_branch_name, revstart, revend, NA, NA, AUDIT_RES_FAILED_CONFLICT)
@@ -211,7 +211,7 @@ def handle_success_merge(revstart, revend, current_branch_name, next_branch_name
     audit_write(AUDIT_OP_MERGE, author, current_branch_name, next_branch_name, revstart, revend, NA, NA, CSV_STATUS_MERGE_SUCCESS)
     rcommit = get_commit_rev_by_resp(commit_merge_result)
     try:
-        mailutils.mail(mergeconfhelper.get_dl(author, mergeconf.ENUM_MERGE), get_merge_success_subject(current_branch_name, next_branch_name, author, rev_as_str), get_merge_success_text(current_branch_name, next_branch_name, message, author, rev_as_str, commit_merge_result), mergeconf.MAIL_ENABLED)
+        mailutils.mail(mergeconf.get_dl(author, mergeconf.ENUM_MERGE), get_merge_success_subject(current_branch_name, next_branch_name, author, rev_as_str), get_merge_success_text(current_branch_name, next_branch_name, message, author, rev_as_str, commit_merge_result), mergeconf.MAIL_ENABLED)
     except:
         LOGGER.error("Please check mail configuration, failed sending email...")
     add_row({mergeconf.TYPE_COL:SPREADSHEET_MERGE, 'who':SPREADSHEET_AUTHOR_PREFIX + author, 'frombranch':current_branch_name, 'tobranch':next_branch_name, 'rfrom':revstart, 'rend':revend, 'rcommit':rcommit, 'bugid':mergeconf.ISSUE_ID_DEFAULT_VALUE, 'details':commit_message}, mergeconf.SPREADSHEET_USERNAME, mergeconf.SPREADSHEET_PASSWORD, mergeconf.SPREADSHEET_KEY, mergeconf.SPREADSHEET_WORKSHEET_ID, mergeconf.APP_KEY)

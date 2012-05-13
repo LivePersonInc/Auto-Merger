@@ -25,7 +25,7 @@
 # THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- 
+
 """
 A nice place to access all configuration from.
 """
@@ -126,6 +126,23 @@ ENUM_EXCLUDED                   = 1
 ENUM_MERGE                      = 2
 
 
+def get_dl(recipient, state):
+    """Get delivery list for email sending, can be different
+    for code freeze branches, excluded branches, or merge branches.
+    
+    Args:
+      recipient: The main receipient, ie the original committer.
+      state: Merge success / fail / excluded / code freeze.
+    """
+    recipient = recipient + "@" + EMAIL_DOMAIN
+    if state == ENUM_CODE_FREEZE:
+        return [recipient] + DL_FREEZE
+    if state == ENUM_MERGE:
+        return [recipient] + DL_MERGE
+    if state == ENUM_EXCLUDED:
+        return [recipient] + DL_EXCLUDED
+
+
 ############################################## 
 #          Mail configurations
 ##############################################
@@ -140,7 +157,7 @@ DL_FREEZE                       = get_config(CONFIGREADER, 'mail', 'dl-freeze').
 DL_EXCLUDED                     = get_config(CONFIGREADER, 'mail', 'dl-excluded').split(',')
 SMTP_HOST                       = get_config(CONFIGREADER, 'mail', 'smtp-host', default='smtp.gmail.com')
 SMTP_PORT                       = int(get_config(CONFIGREADER, 'mail', 'smtp-port', default=587))
-EMAIL_DOMAIN                    = get_config(CONFIGREADER, 'mail', 'email-domain')
+EMAIL_DOMAIN                    = get_config(CONFIGREADER, 'mail', 'email-domain', default=None)
 
 KEY_REPO                        = 'repo'
 KEY_REV_START                   = 'rev_start'

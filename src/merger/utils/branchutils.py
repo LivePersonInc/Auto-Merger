@@ -175,7 +175,7 @@ def handle_code_freeze_cur_branch(merge_item):
         audit_write(AUDIT_OP_MERGE, merge_item[KEY_AUTHOR], merge_item[KEY_CURRENT_BRANCH], merge_item[KEY_NEXT_BRANCH], 
                     merge_item[KEY_REV_START], merge_item[KEY_REV_START], NA, NA,
                     AUDIT_EXPL_CODE_FREEZE)
-        mailutils.mail(mergeconfhelper.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_CODE_FREEZE),
+        mailutils.mail(mergeconf.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_CODE_FREEZE),
                        'Commit made to branch ' + merge_item[KEY_CURRENT_BRANCH] + 
                        ' which is below code freeze branch',
                        'Commit made to branch ' + merge_item[KEY_CURRENT_BRANCH] + 
@@ -197,7 +197,7 @@ def handle_code_freeze_next_branch(merge_item):
         audit_write(AUDIT_OP_MERGE, merge_item[KEY_AUTHOR], merge_item[KEY_NEXT_BRANCH], 
                     merge_item[KEY_NEXT_BRANCH], merge_item[KEY_REV_START], merge_item[KEY_REV_START], NA, NA,
                     AUDIT_EXPL_CODE_FREEZE)
-        mailutils.mail(mergeconfhelper.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_CODE_FREEZE),
+        mailutils.mail(mergeconf.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_CODE_FREEZE),
                        get_nextbranch_codefreeze_subject(merge_item[KEY_NEXT_BRANCH]),
                        get_nextbranch_codefreeze_text(merge_item[KEY_REV_START], 
                                                       merge_item[KEY_CURRENT_BRANCH], merge_item[KEY_LOOK_RESULT], 
@@ -213,7 +213,7 @@ def handle_excluded_cur_branch(merge_item):
         mergeconf.LOGGER.debug(merge_item[KEY_CURRENT_BRANCH] + " is in exclusion")
         audit_write(AUDIT_OP_MERGE, merge_item[KEY_AUTHOR], merge_item[KEY_CURRENT_BRANCH], merge_item[KEY_NEXT_BRANCH], merge_item[KEY_REV_START], merge_item[KEY_REV_START], NA, NA,
                     AUDIT_EXPL_EXCLUDED)
-        mailutils.mail(mergeconfhelper.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_EXCLUDED), get_subject_excluded(merge_item[KEY_CURRENT_BRANCH]),
+        mailutils.mail(mergeconf.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_EXCLUDED), get_subject_excluded(merge_item[KEY_CURRENT_BRANCH]),
                        get_text_excluded(merge_item[KEY_REV_START], merge_item[KEY_CURRENT_BRANCH], merge_item[KEY_LOOK_RESULT], merge_item[KEY_MESSAGE], merge_item[KEY_AUTHOR]))
         f_excluded = True
     return f_excluded
@@ -225,7 +225,7 @@ def handle_excluded_next_branch(merge_item):
         mergeconf.LOGGER.debug(merge_item[KEY_CURRENT_BRANCH] + " is in exclusion")
         audit_write(AUDIT_OP_MERGE, merge_item[KEY_AUTHOR], merge_item[KEY_CURRENT_BRANCH], merge_item[KEY_NEXT_BRANCH], merge_item[KEY_REV_START], merge_item[KEY_REV_START], NA, NA,
                     AUDIT_EXPL_EXCLUDED)
-        mailutils.mail(mergeconfhelper.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_EXCLUDED), get_next_excluded_subject(merge_item[KEY_NEXT_BRANCH]),
+        mailutils.mail(mergeconf.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_EXCLUDED), get_next_excluded_subject(merge_item[KEY_NEXT_BRANCH]),
                        get_next_excluded_text(merge_item[KEY_REV_START], merge_item[KEY_LOOK_RESULT], merge_item[KEY_NEXT_BRANCH], merge_item[KEY_MESSAGE], merge_item[KEY_AUTHOR]))
         f_excluded = True
     return f_excluded
@@ -236,7 +236,7 @@ def is_automatic_allowed(merge_item):
         mergeconf.LOGGER.debug("Automatic merge is not allowed")
         audit_write(AUDIT_OP_MERGE, merge_item[KEY_AUTHOR], merge_item[KEY_CURRENT_BRANCH], merge_item[KEY_NEXT_BRANCH], merge_item[KEY_REV_START], merge_item[KEY_REV_START], NA, NA,
                     AUDIT_EXPL_AUTO_NOT_ALLOWED)
-        mailutils.mail(mergeconfhelper.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_EXCLUDED), get_auto_not_allowed_subject(merge_item[KEY_NEXT_BRANCH]),
+        mailutils.mail(mergeconf.get_dl(merge_item[KEY_AUTHOR], mergeconf.ENUM_EXCLUDED), get_auto_not_allowed_subject(merge_item[KEY_NEXT_BRANCH]),
                        get_auto_not_allowed_text(merge_item[KEY_REV_START], merge_item[KEY_CURRENT_BRANCH], merge_item[KEY_LOOK_RESULT], merge_item[KEY_MESSAGE], merge_item[KEY_AUTHOR]))
         is_allowed = False
     return is_allowed

@@ -26,16 +26,15 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-Supporting with ease more complex structures of configuration in .conf files.
-"""
-
-
-from merger.conf.mergeconf import EMAIL_DOMAIN, ENUM_CODE_FREEZE, DL_FREEZE, \
-    ENUM_MERGE, DL_MERGE, ENUM_EXCLUDED, DL_EXCLUDED
 import ConfigParser
 import logging
 import os
+
+"""
+Nice helper methods to load configuration file, to load defaults in conf...
+"""
+
+
 
 def get_config(config, section, option, ctype=str, default=None):
     confdict = config.__dict__.get('_sections')
@@ -91,19 +90,4 @@ def get_branches_map(branchitems):
     logging.info('branchesmap: ' + str(branchesmap))
     return branchesmap
 
-def get_dl(recipient, state):
-    """Get delivery list for email sending, can be different
-    for code freeze branches, excluded branches, or merge branches.
-    
-    Args:
-      recipient: The main receipient, ie the original committer.
-      state: Merge success / fail / excluded / code freeze.
-    """
-    recipient = recipient + "@" + EMAIL_DOMAIN
-    if state == ENUM_CODE_FREEZE:
-        return [recipient] + DL_FREEZE
-    if state == ENUM_MERGE:
-        return [recipient] + DL_MERGE
-    if state == ENUM_EXCLUDED:
-        return [recipient] + DL_EXCLUDED
 

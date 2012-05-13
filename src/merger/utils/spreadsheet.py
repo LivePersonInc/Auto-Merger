@@ -28,7 +28,6 @@
 
 '''
 Created on May 29, 2011
-
 '''
 
 from merger.conf import mergeconf
