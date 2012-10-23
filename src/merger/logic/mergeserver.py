@@ -207,14 +207,17 @@ class merge:
             return '<html><body>Starting merge check result at: \var\tmp\automerger.log</body></html>'
         except:
             mergeconf.LOGGER.exception("exception occured")
-            
-if __name__ == "__main__":
+
+def start_webpy():
     web.config.debug = False
     urls = ('/', 'index', '/merge', 'merge')
     app = web.application(urls, globals())
-    myqueue = Queue()
     consumer = ConsumeFromQueue("Consumer", myqueue)
     consumer.start()
     web.internalerror = web.debugerror
     app.run()
 
+myqueue = Queue()
+
+if __name__ == "__main__":
+    start_webpy()

@@ -35,7 +35,7 @@ import sys
 import urllib
 
 
-def produce_merge():
+def produce_merge(repository, revision):
     """
        This method is called after a user commits to svn repository.
        We get here the repository and revision that was committed.
@@ -51,12 +51,6 @@ def produce_merge():
          Result: updates csv audit with commit performed and calls server to treat that merge.
     """
     LOGGER.debug('auto merger %s ' % (mergeconf.VERSION))
-    for arg in sys.argv:
-        LOGGER.debug ('arg: ' + arg)
-    LOGGER.debug('repository: ' + sys.argv[1])
-    LOGGER.debug('revision number: ' + sys.argv[2])
-    repository = sys.argv[1]
-    revision = sys.argv[2]
 
     lookcmd = LOOK_CHANGED_TMPL % (revision,repository)
     LOGGER.debug('lookcmd: ' + lookcmd)
@@ -103,6 +97,12 @@ def write_merge_produced(rev, branch, REPO, status):
         
 
 if __name__=="__main__":
+    for arg in sys.argv:
+        LOGGER.debug ('arg: ' + arg)
+    LOGGER.debug('repository: ' + sys.argv[1])
+    LOGGER.debug('revision number: ' + sys.argv[2])
+    repository = sys.argv[1]
+    revision = sys.argv[2]
     LOGGER.debug("postcommit called...")
-    produce_merge()
+    produce_merge(repository, revision)
 
