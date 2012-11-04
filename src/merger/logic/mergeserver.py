@@ -35,6 +35,7 @@ from Queue import Queue
 from merger.conf import mergeconf
 from merger.conf.mergeconf import MERGE_INTERVAL
 from merger.logic.mergeworker import MergeWorker
+from merger.utils.merge_messages import say_up
 from web import form
 import logging
 import os
@@ -215,6 +216,7 @@ def start_webpy():
     consumer = ConsumeFromQueue("Consumer", myqueue)
     consumer.start()
     web.internalerror = web.debugerror
+    say_up()
     app.run()
 
 myqueue = Queue()

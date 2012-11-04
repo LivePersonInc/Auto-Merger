@@ -72,3 +72,14 @@ def get_auto_not_allowed_subject(next_branch):
 def get_auto_not_allowed_text(revstart, current_branch, lookresult, message, author):
     return 'Commit made to branch ' + current_branch + '\n' + 'By: ' + author + '\n' + 'Revision: ' + revstart + '\n' + 'Message: ' + message + '\n' + lookresult
 
+def say_up():
+    print("""
+                _              __  __                            _    _ _____  _
+     /\        | |            |  \/  |                          | |  | |  __ \| |
+    /  \  _   _| |_ ___ ______| \  / | ___ _ __ __ _  ___ _ __  | |  | | |__) | |
+   / /\ \| | | | __/ _ \______| |\/| |/ _ \ '__/ _` |/ _ \ '__| | |  | |  ___/| |
+  / ____ \ |_| | || (_) |     | |  | |  __/ | | (_| |  __/ |    | |__| | |    |_|
+ /_/    \_\__,_|\__\___/      |_|  |_|\___|_|  \__, |\___|_|     \____/|_|    (_)
+                                                __/ |
+                                               |___/                             """)
+
