@@ -81,5 +81,12 @@ def say_up():
   / ____ \ |_| | || (_) |     | |  | |  __/ | | (_| |  __/ |    | |__| | |    |_|
  /_/    \_\__,_|\__\___/      |_|  |_|\___|_|  \__, |\___|_|     \____/|_|    (_)
                                                 __/ |
-                                               |___/                             """)
+                                               |___/                             
+					       
+hey, don't forget to add the post commit hook example:
+@echo off
+d:
+cd d:\vcs\Auto-Merger\src
+python.exe main.py client %*
+					       """)
 
