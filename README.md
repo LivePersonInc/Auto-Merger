@@ -16,6 +16,12 @@ What is it's design?
 ====================
 ![How about its design?](https://sites.google.com/site/thedevtips/Home/linux/automerger-design.png?attredirects=0)
 
+Sounds great! how to install it?
+================================
+Just clone it and run python ./main.py from src directory.
+see that you have a properly configured merger.conf
+
+
 FAQ
 ---
 
