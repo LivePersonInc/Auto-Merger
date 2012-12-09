@@ -4,6 +4,18 @@ Auto merger combines the benefits of multiple branches and continuous integratio
 
 Auto-merger provides various reports to check backwards the merge-completeness status of branches.  It’s filling up automatically an  online spreadsheet, an audit file, and a web based online report which tries to detect separately from it’s actual merge operation, which merges were not verified or not done.  All this, in order to assist querying the merge-health of branches.
 
+What does it do?
+=================
+![What does it do](https://sites.google.com/site/thedevtips/Home/linux/automerger-branches.png?attredirects=0)
+
+How does it work?
+=================
+![How does it work](https://sites.google.com/site/thedevtips/Home/linux/automerger-sequence.png?attredirects=0)
+
+What is it's design?
+====================
+![How about its design?](https://sites.google.com/site/thedevtips/Home/linux/automerger-design.png?attredirects=0)
+
 FAQ
 ---
 
