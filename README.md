@@ -20,7 +20,7 @@ What is it's design?
 
 Sounds great! how to install it?
 ================================
-Just clone it and run python ./main.py from src directory.
+See the .git url over the top of this page? just clone it and run python ./main.py from src directory.
 see that you have a properly configured merger.conf
 
 
