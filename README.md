@@ -8,6 +8,8 @@ What does it do?
 =================
 ![What does it do](https://sites.google.com/site/thedevtips/Home/linux/automerger-branches.png?attredirects=0)
 
+you configure which branches you have and over which rules you want automatic branches, auto merger will do it automatically for you, commit into 1.0.0 your commit will be propagated into next branches automatically.
+
 How does it work?
 =================
 ![How does it work](https://sites.google.com/site/thedevtips/Home/linux/automerger-sequence.png?attredirects=0)
