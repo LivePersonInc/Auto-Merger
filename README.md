@@ -6,17 +6,17 @@ Auto-merger provides various reports to check backwards the merge-completeness s
 
 What does it do?
 =================
-![What does it do](https://sites.google.com/site/thedevtips/Home/linux/automerger-branches.png?attredirects=0)
+![What does it do](https://sites.google.com/site/thedevtips/Home/linux/automerger-branches.png)
 
 you configure which branches you have and over which rules you want automatic merges, auto merger will do it automatically for you, commit into 1.0.0 your commit will be propagated into next branches automatically.
 
 How does it work?
 =================
-![How does it work](https://sites.google.com/site/thedevtips/Home/linux/automerger-sequence.png?attredirects=0)
+![How does it work](https://sites.google.com/site/thedevtips/Home/linux/automerger-sequence.png)
 
 What is it's design?
 ====================
-![How about its design?](https://sites.google.com/site/thedevtips/Home/linux/automerger-design.png?attredirects=0)
+![How about its design?](https://sites.google.com/site/thedevtips/Home/linux/automerger-design.png)
 
 Sounds great! how to install it?
 ================================
