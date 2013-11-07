@@ -73,4 +73,4 @@ Every developer is responsible for his commits - so he is responsible to merge t
 **A:** web.py, gdata, mock.py
 
 **Q:** I have other question which was not answered here.  
-**A:** Feel free to contact us with questions
+**A:** Feel free to contact us with questions.
