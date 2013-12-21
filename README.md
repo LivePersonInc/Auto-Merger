@@ -29,8 +29,7 @@ see that you have a properly configured merger.conf
 
 Development?
 ====================
-On Ubuntu:
-* sudo apt-get install pip
+Install pip (http://www.pip-installer.org/en/latest/installing.html to install pip)
 
 
 FAQ
