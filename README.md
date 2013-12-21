@@ -29,7 +29,8 @@ see that you have a properly configured merger.conf
 
 Development?
 ====================
-Install pip (http://www.pip-installer.org/en/latest/installing.html to install pip)
+Install pip (http://www.pip-installer.org/en/latest/installing.html)
+checkout project and install virtualenv on its root (http://docs.python-guide.org/en/latest/dev/env/)
 
 
 FAQ
