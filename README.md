@@ -4,19 +4,21 @@ Auto-Merger
 .
 Auto-merger provides various reports to check backwards the merge-completeness status of branches.  It’s filling up automatically an  online spreadsheet, an audit file, and a web based online report which tries to detect separately from it’s actual merge operation, which merges were not verified or not done.  All this, in order to assist querying the merge-health of branches.
 
-What does it do?
+What?
 =================
 ![What does it do](https://sites.google.com/site/thedevtips/Home/linux/automerger-branches.png)
 
 you configure which branches you have and over which rules you want automatic merges, auto merger will automatically perform it for you, commit into 1.0.0 your commit will be propagated into next branches automatically.
 
-How does it work?
+How?
 =================
 ![How does it work](https://sites.google.com/site/thedevtips/Home/linux/automerger-sequence.png)
 
-What is it's design?
+Design?
 ====================
 ![How about its design?](https://sites.google.com/site/thedevtips/Home/linux/automerger-design.png)
+
+
 
 Sounds great! how to install it?
 ================================
@@ -24,6 +26,11 @@ Just go ahead and clone it, run python ./main.py from src directory.
 (you should have web.py, gdata, mock.py in your PYTHONPATH)
 see that you have a properly configured merger.conf
 (if you have any questions let me know)
+
+Development?
+====================
+On Ubuntu:
+* sudo apt-get install pip
 
 
 FAQ
