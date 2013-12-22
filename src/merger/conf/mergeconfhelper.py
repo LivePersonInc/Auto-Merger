@@ -62,7 +62,7 @@ def load_conf(primary_path, secondary_path):
     logging.basicConfig(format='%(asctime)s %(levelname)s' + 
         ' %(module)s %(lineno)d %(message)s', level=logging.DEBUG)
     configreader = ConfigParser.ConfigParser()
-    merge_conf_file = os.getcwd() + primary_path
+    merge_conf_file = primary_path
     logging.info('trying conf file: ' + merge_conf_file)
     results = configreader.read(merge_conf_file)
     if results == []:

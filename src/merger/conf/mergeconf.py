@@ -34,14 +34,16 @@ from merger.conf.mergeconfhelper import get_config, load_conf, get_branches_map
 from merger.utils.loggerutils import initlogger
 from merger.utils.shellutils import ShellUtils
 import base64
+import os
 
 
 ##############################################
 ###         Configuraiton file 
 ##############################################
-CONF_FILE_RELATIVE              = '/../../../conf/merger.conf'
-ETC_CONF_FILEPATH               = '/etc/merger.conf'
-CONFIGREADER                    = load_conf(CONF_FILE_RELATIVE, ETC_CONF_FILEPATH)
+CONF_FILE                       = "merger.conf"
+CONF_FILE_RELATIVE              = os.path.dirname(os.path.abspath(__file__)) + "/../../../conf/%s" % CONF_FILE
+ETC_CONF_FILEPATH               = '/etc/%s' % CONF_FILE
+CONFIGREADER                    = load_conf(ETC_CONF_FILEPATH, CONF_FILE_RELATIVE)
 
 ##############################################
 # Core branching merging related configuration
