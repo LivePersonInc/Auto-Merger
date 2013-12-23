@@ -29,7 +29,7 @@ see that you have a properly configured merger.conf
 
 Development?
 ====================
-Same guildlines here can be utilized in order to start up automerger.
+Same guidelines here can be utilized in order to start up automerger.
 We recommend using virtualenv for development, this would easy dependency management and local dependency scoping.
 Install pip (for more information http://www.pip-installer.org/en/latest/installing.html)
 checkout Auto-Merger project and install virtualenv on its root (for more information http://http://docs.python-guide.org/en/latest/dev/virtualenvs/)
