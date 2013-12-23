@@ -36,27 +36,39 @@ checkout Auto-Merger project and install virtualenv on its root (for more inform
 
 in following example we will clone automerger to `~/tmp folder`
 
-`~/tmp$ git clone https://github.com/liveperson/Auto-Merger.git`
+```bash
+~/tmp$ git clone https://github.com/liveperson/Auto-Merger.git
+```
 
 now lets change to automerger cloned dir
 
-`~/tmp$ cd Auto-Merger/`
+```bash
+~/tmp$ cd Auto-Merger/
+```
 
 Create a virtualenv called venv (will appear as a folder inside Auto-Merger)
 
-`~/tmp/Auto-Merger$ virtualenv venv`
+```bash
+~/tmp/Auto-Merger$ virtualenv venv
+```
 
 Activate venv
 
-`source venv/bin/activate`
+```bash
+source venv/bin/activate
+```
 
 Install gdata dependency (for more information see: http://pythonhosted.org/gdata/installation.html)
 
-`pip install gdata`
+```bash
+pip install gdata
+```
 
 Install web.py (http://webpy.org/install)
 
-`pip install web.py`
+```bash
+pip install web.py
+```
 
 Start up the server
 
