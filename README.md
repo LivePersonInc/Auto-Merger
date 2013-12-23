@@ -60,11 +60,14 @@ Install web.py (http://webpy.org/install)
 
 Start up the server
 
-`cd src`
-`python ./main.py`
+```bash
+cd src
+python ./main.py
+```
 
 On success you will see:
 
+<pre>
                 _              __  __                            _    _ _____  _
      /\        | |            |  \/  |                          | |  | |  __ \| |
     /  \  _   _| |_ ___ ______| \  / | ___ _ __ __ _  ___ _ __  | |  | | |__) | |
@@ -73,6 +76,7 @@ On success you will see:
  /_/    \_\__,_|\__\___/      |_|  |_|\___|_|  \__, |\___|_|     \____/|_|    (_)
                                                 __/ |
                                                |___/
+</pre>
 
 FAQ
 ---
