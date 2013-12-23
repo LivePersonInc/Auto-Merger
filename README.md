@@ -29,9 +29,50 @@ see that you have a properly configured merger.conf
 
 Development?
 ====================
-Install pip (http://www.pip-installer.org/en/latest/installing.html)
-checkout project and install virtualenv on its root (http://docs.python-guide.org/en/latest/dev/env/)
+Same guildlines here can be utilized in order to start up automerger.
+We recommend using virtualenv for development, this would easy dependency management and local dependency scoping.
+Install pip (for more information http://www.pip-installer.org/en/latest/installing.html)
+checkout Auto-Merger project and install virtualenv on its root (for more information http://http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
+in following example we will clone automerger to `~/tmp folder`
+
+`~/tmp$ git clone https://github.com/liveperson/Auto-Merger.git`
+
+now lets change to automerger cloned dir
+
+`~/tmp$ cd Auto-Merger/`
+
+Create a virtualenv called venv (will appear as a folder inside Auto-Merger)
+
+`~/tmp/Auto-Merger$ virtualenv venv`
+
+Activate venv
+
+`source venv/bin/activate`
+
+Install gdata dependency (for more information see: http://pythonhosted.org/gdata/installation.html)
+
+`pip install gdata`
+
+Install web.py (http://webpy.org/install)
+
+`pip install web.py`
+
+Start up the server
+
+`cd src`
+`python ./main.py`
+
+On success you will see:
+
+                _              __  __                            _    _ _____  _
+     /\        | |            |  \/  |                          | |  | |  __ \| |
+    /  \  _   _| |_ ___ ______| \  / | ___ _ __ __ _  ___ _ __  | |  | | |__) | |
+   / /\ \| | | | __/ _ \______| |\/| |/ _ \ '__/ _` |/ _ \ '__| | |  | |  ___/| |
+  / ____ \ |_| | || (_) |     | |  | |  __/ | | (_| |  __/ |    | |__| | |    |_|
+ /_/    \_\__,_|\__\___/      |_|  |_|\___|_|  \__, |\___|_|     \____/|_|    (_)
+                                                __/ |
+                                               |___/
 
 FAQ
 ---
