@@ -5,20 +5,18 @@ Auto-Merger
 Auto-merger provides various reports to check backwards the merge-completeness status of branches.  It’s filling up automatically an  online spreadsheet, an audit file, and a web based online report which tries to detect separately from it’s actual merge operation, which merges were not verified or not done.  All this, in order to assist querying the merge-health of branches.
 
 What?
-=================
+=====
 ![What does it do](https://sites.google.com/site/thedevtips/Home/linux/automerger-branches.png)
 
 you configure which branches you have and over which rules you want automatic merges, auto merger will automatically perform it for you, commit into 1.0.0 your commit will be propagated into next branches automatically.
 
 How?
-=================
+====
 ![How does it work](https://sites.google.com/site/thedevtips/Home/linux/automerger-sequence.png)
 
 Design?
-====================
+=======
 ![How about its design?](https://sites.google.com/site/thedevtips/Home/linux/automerger-design.png)
-
-
 
 Sounds great! how to install it?
 ================================
@@ -26,6 +24,37 @@ Just go ahead and clone it, run python ./main.py from src directory.
 (you should have web.py, gdata, mock.py in your PYTHONPATH)
 see that you have a properly configured merger.conf
 (if you have any questions let me know)
+
+Configuration?
+==============
+Have a look at conf/merger.conf it contains an example configuration.
+
+you need to define the base url to your repository (currently automerger supports a single repository). so you define it under:
+you need to have an `[svn-repo]` section and under this section place the base url to your svn repository example:
+
+```
+[svn-repo]
+base-repository = http://mysvnserver/myrepo
+```
+
+note automerger will expect every item separated by `,` in section `[branches]` to be a postfix to this base  url.
+so if you can access your project with `http://mysvnserver/myrepo/MyProjectA/trunk` then in next section in branches every branch will start from
+trunk or your specific version name as you already specified the base url in `base-repository`
+
+in `[branches]` section.  This section describes your projects.
+Each "project" merging flow will have a "row" in that section.  So if you have 3 projects.  `MyProjectA`, `MyProjectB`, `MyProjectC` where `MyProjectA` has 3 branches `trunk`,`1.0`,`1.1`
+ and you wish 1.0 to be merged into 1.1 and then 1.1 to be merged into trunk you will have the following line:
+
+```
+[branches]
+some_signifying_name_for_project_choose_whatever_you_want=MyProjectA/1.0,MyProjectA/1.1,MyProjectA/trunk
+```
+
+you see, `MyProjectA/1.0` is the relative path to `MyProjectA/1.0` under `http://mysvnserver/myrepo`.
+
+*Whenever do a commit, automerger will scan all projects under `[branches]` if there is a match meaning you have committed
+to ANY project under `[branches]` it will then check if there is another branches specified after it with a `,` if yes it will
+simply try to merge into it.  Then as it will commit the merge it will be triggered again to the next branch ofcourse.
 
 Development?
 ====================
