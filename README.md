@@ -49,7 +49,6 @@ Each "project" merging flow will have a "row" in that section.  So if you have 3
 [branches]
 some_signifying_name_for_project_choose_whatever_you_want=MyProjectA/1.0,MyProjectA/1.1,MyProjectA/trunk
 ```
-
 you see, `MyProjectA/1.0` is the relative path to `MyProjectA/1.0` under `http://mysvnserver/myrepo`.
 
 *Whenever do a commit, automerger will scan all projects under `[branches]` if there is a match meaning you have committed
