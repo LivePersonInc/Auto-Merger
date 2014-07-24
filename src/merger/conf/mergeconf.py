@@ -58,6 +58,11 @@ SVN_PASSWORD                    = base64.decodestring(get_config(CONFIGREADER, '
 REPO                            = get_config(CONFIGREADER, 'svn-repo', 'REPO')
 
 ##############################################
+#             Main Arguments
+##############################################
+ARG_CLIENT = 'client'
+
+##############################################
 #     CSV / Audit related configuration
 ##############################################
 NA                              = 'N/A'
