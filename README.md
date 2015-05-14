@@ -166,3 +166,6 @@ Every developer is responsible for his commits - so he is responsible to merge t
 
 **Q:** I have other question which was not answered here.  
 **A:** Feel free to contact us with questions.
+
+**Q:** I don't see `Run` context menu item when right clicking any test file, how can I run the tests from `intellij`?
+**A:** From `intellij`: Project Settings --> Facets --> Add python facet to the project.
