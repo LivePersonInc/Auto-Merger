@@ -168,4 +168,8 @@ Every developer is responsible for his commits - so he is responsible to merge t
 **A:** Feel free to contact us with questions.
 
 **Q:** I don't see `Run` context menu item when right clicking any test file, how can I run the tests from `intellij`?
-**A:** From `intellij`: Project Settings --> Facets --> Add python facet to the project.
+**A:** From `intellij`: Project Settings --> Facets --> Add python facet to the project.  If did not work edit `.idea/github-automerger.iml` and set the following params (if already exist and point to wrong directory)
+```xml
+    <output url="file://$MODULE_DIR$/outputurl" />
+    <output-test url="file://$MODULE_DIR$/outputtest" />
+```
