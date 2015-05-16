@@ -58,7 +58,7 @@ simply try to merge into it.  Then as it will commit the merge it will be trigge
 ## Automerver client / server notations explained.
 Automerver listens to every commit made by an svn hook.  This means you will need to install an svn hook in your `post-commit` script.  `post-commit` hook will then call auto-merer server for each `commit` the server is now responsible for actually performing the merge (checkout target branch, merge, commit target branch).
 
-An example `post-commit` hooks looks as following:
+Navigate to your repository’s hooks directory. This is almost always a directory cleverly named “hooks” right inside the top level of your repository and edit file named `post-commit` with the following content (you may need to tweak it for your own env, python home etc).
 ```bash
 #!/bin/sh
 cd  /opt/auto-merger/src/
