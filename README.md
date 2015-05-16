@@ -55,6 +55,18 @@ you see, `MyProjectA/1.0` is the relative path to `MyProjectA/1.0` under `http:/
 to ANY project under `[branches]` it will then check if there is another branches specified after it with a `,` if yes it will
 simply try to merge into it.  Then as it will commit the merge it will be triggered again to the next branch ofcourse.
 
+## Automerver client / server notations explained.
+Automerver listens to every commit made by an svn hook.  This means you will need to install an svn hook in your `post-commit` script.  `post-commit` hook will then call auto-merer server for each `commit` the server is now responsible for actually performing the merge (checkout target branch, merge, commit target branch).
+
+An example `post-commit` hooks looks as following:
+```bash
+#!/bin/sh
+cd  /opt/auto-merger/src/
+echo commit-hook trigered  >> /var/log/automerger.log
+/usr/bin/python /opt/auto-merger/src/postcommit.py $1 $2
+```
+all it does is call automerger's postcommit.py with the args ($1 $2) which the svn commit passes it (the repo home and the commit revision), `postcommit.py` which is poart of automerger is then responsible for calling automerger server for further merging.
+
 Development?
 ====================
 Same guidelines here can be utilized in order to start up automerger.

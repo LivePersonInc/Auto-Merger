@@ -1,0 +1,4 @@
+#!/bin/sh
+cd  /opt/auto-merger/src/
+echo commit-hook trigered  >> /var/log/automerger.log
+/usr/bin/python /opt/auto-merger/src/postcommit.py $1 $2
