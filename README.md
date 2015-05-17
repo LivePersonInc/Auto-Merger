@@ -74,6 +74,8 @@ We recommend using virtualenv for development, this would easy dependency manage
 Install pip (for more information http://www.pip-installer.org/en/latest/installing.html)
 checkout Auto-Merger project and install virtualenv on its root (for more information http://http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
+**Important: Automerger was developed and tested with python 2.7.x it does not support python 3.x**
+
 in following example we will clone automerger to `~/tmp folder`
 
 ```bash
