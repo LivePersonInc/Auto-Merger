@@ -29,6 +29,8 @@ Configuration?
 ==============
 Have a look at conf/merger.conf it contains an example configuration.
 
+**Important: Automerger was developed and tested with python 2.7.x it does not support python 3.x**
+
 you need to define the base url to your repository (currently automerger supports a single repository). so you define it under:
 you need to have an `[svn-repo]` section and under this section place the base url to your svn repository example:
 
@@ -73,8 +75,6 @@ Same guidelines here can be utilized in order to start up automerger.
 We recommend using virtualenv for development, this would easy dependency management and local dependency scoping.
 Install pip (for more information http://www.pip-installer.org/en/latest/installing.html)
 checkout Auto-Merger project and install virtualenv on its root (for more information http://http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-
-**Important: Automerger was developed and tested with python 2.7.x it does not support python 3.x**
 
 in following example we will clone automerger to `~/tmp folder`
 
