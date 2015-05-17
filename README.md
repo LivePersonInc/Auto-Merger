@@ -172,8 +172,8 @@ Human mergers - which continuously perform merge.
 Every developer is responsible for his commits - so he is responsible to merge them to all future branches.  
 
 
-**Q:** Doesn't git solves all merging problems?  
-**A:** No, while git has a better merge algorithm it does not perform auto merging. (git has gerrit which is somewhat what auto-merger is to svn, so both required a tool problem to handle a similar but not the same problem).  
+**Q:** Doesn't git solves all merging problems?
+**A:** git alone not.  You need a web based ui to have a proper pull requests mechanism such as github enterprise / gitlab / bitbucket.  With them you are able to create pull requests you will need however to remember some how to which further branches you wish to perform the pull requests.  
 
 **Q:** Which modules is auto merger dependant on?  
 **A:** web.py, gdata, mock.py
