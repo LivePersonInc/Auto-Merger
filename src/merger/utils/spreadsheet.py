@@ -30,35 +30,9 @@
 Created on May 29, 2011
 '''
 
-from merger.conf import mergeconf
 from merger.conf.mergeconf import LOGGER
-import gdata.spreadsheet.service
-import logging
-import time
+
 
 
 def add_row(rowdict, username, apassword, aspreadsheet_key, aworksheet_id, asource):
-    if not mergeconf.SPREADSHEET_ENABLED:
-        LOGGER.debug("Not writing to spreadsheet as its not enabled...")
-        return
-    mergeconf.LOGGER.debug("spreadsheet_key: [" + aspreadsheet_key + "] worksheetid: [" + aworksheet_id + "] source: [" + asource + "]")
-    password = apassword
-    spreadsheet_key = aspreadsheet_key
-    # All spreadsheets have worksheets. worksheet #1 by default always has a value of 'od6'
-    worksheet_id = 'od6'
-    
-    spr_client = gdata.spreadsheet.service.SpreadsheetsService()
-    spr_client.email = username
-    spr_client.password = password
-    spr_client.source = asource
-    spr_client.ProgrammaticLogin()
-    
-    # Prepare the dictionary to write
-    rowdict['date'] = time.strftime('%m/%d/%Y')
-    logging.info(rowdict)
-    
-    entry = spr_client.InsertRow(rowdict, spreadsheet_key, worksheet_id)
-    if isinstance(entry, gdata.spreadsheet.SpreadsheetsList):
-        logging.info("Insert row succeeded.")
-    else:
-        logging.info("Insert row failed.")
+    LOGGER.debug("Spreadsheet integration depracated...")

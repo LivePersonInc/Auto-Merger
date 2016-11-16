@@ -57,11 +57,10 @@ def produce_merge(repository, revision):
     result = mergeconf.M_SHU.runshellcmd(lookcmd)
     LOGGER.debug('result: ' + result)
     current_branch_name = svnutils.get_branch_by_look(result, mergeconf.BRANCHES_MAP)
-    
-    
+
     # If the branch for which a commit just happended is not relevant to our branches.
     if not current_branch_name:
-        LOGGER.debug('Branch changed is not in list of branches to auto merge')
+        LOGGER.debug('produce_merge: current_branch_name:' + current_branch_name + ', Branch changed is not in list of branches to auto merge')
         write_merge_produced(revision, current_branch_name, repository, mergeconf.CSV_STATUS_MERGE_IGNORED)
         return
     

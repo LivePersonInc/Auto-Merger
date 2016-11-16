@@ -294,8 +294,10 @@ def get_branch_by_look(svn_look_line, BRANCHES_MAP):
         Returns:
             The branch path for the provided svn look line.
     """
+    mergeconf.LOGGER.debug('get_branch_by_look: svn_look_line: ' + svn_look_line + ', BRANCHES_MAP: ' + str(BRANCHES_MAP))
     for branches_col in BRANCHES_MAP:
         for branch in BRANCHES_MAP[branches_col]:
+            mergeconf.LOGGER.debug('get_branch_by_look: svn_look_line: ' + svn_look_line + ', branch: ' + branch)
             if svn_look_line.find(branch) != -1:
                 return branch
 

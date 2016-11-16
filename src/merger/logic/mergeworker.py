@@ -174,7 +174,7 @@ def is_relevant_branch(commitrev, branch_name):
     if not branch_name:
         audit_write(AUDIT_OP_MERGE, NA, branch_name, NA, commitrev, commitrev, NA, NA,
                     AUDIT_RES_BRANCH_NOT_INF_CONF)
-        mergeconf.LOGGER.debug('Branch changed is not in list of branches to auto merge')
+        mergeconf.LOGGER.debug('is_relevant_branch: branch_name: ' + branch_name  + ', Branch changed is not in list of branches to auto merge')
         is_relevant = False
     return is_relevant
 
